@@ -1,9 +1,9 @@
-import 'package:bloc_demo/bloc/cart_bloc.dart';
-import 'package:bloc_demo/bloc/shop_bloc.dart';
+import 'package:bloc_demo/pages/products.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bloc_demo/pages/first_page.dart';
 import 'package:provider/provider.dart';
+
+import 'bloc/car_bloc.dart';
 
 void main() {
   return runApp(
@@ -14,8 +14,7 @@ void main() {
     // )
     new MultiProvider(
       providers: <SingleChildCloneableWidget>[
-        Provider<ShopBloc>.value(value: new ShopBloc()),
-        Provider<CartBloc>.value(value: new CartBloc())
+        Provider<CarBloc>.value(value: new CarBloc())
       ],
       child: new MyApp(),
     )
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new FirstPage()
+      home: new Products()
     );
   }
 }
